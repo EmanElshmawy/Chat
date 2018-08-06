@@ -46,8 +46,8 @@
 --------------------- */
 body {
     font-family: mainFontRegular;
-    line-height: 30px;
-    background-color: #fff;
+    line-height: 15px;
+    background-color: $BG;
 }
 
  *, *:before, *:after {
@@ -65,9 +65,3 @@ body {
 }
 
 
-
-    .online{
-        .circle {
-            color:green !important;
-        }
-    }

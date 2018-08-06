@@ -1,10 +1,9 @@
 $(document).ready(function () {
 
 
-
     /////// collapsebtn responsive layout  /////// 
 
-    $('#contactListCollapse, #collapseBtn').on('click', function () {
+    $('#contactListCollapse, #collapseBtn,  #contactListClose ').on('click', function () {
 
         $('#contactList, #content').toggleClass('active');
         $("overlay").toggleClass('overlay-active');
@@ -12,7 +11,7 @@ $(document).ready(function () {
         $('a[aria-expanded=true]').attr('aria-expanded', 'false');
 
     });
-
+  
 
     /////// search on contact list /////// 
 
@@ -65,17 +64,27 @@ $(document).ready(function () {
 
         if ($('#btn-input').val().trim() != '') {
             var message = $('#btn-input').val();
-            $('<div class="bubble me">' + message + '</div>').appendTo('.chat[data-chat].active-chat');
+
+         
+            $('<div class="bubble me"> <span class="text">'+ message + '</span> <Span class="time">12.36 PM</Span></div>').appendTo('.chat[data-chat].active-chat');
             $(".active .preview").html(message);
             $('#btn-input').val("");
             $('.person[data-chat].active').prependTo($('.person[data-chat]').parent());
-            $(".chat[data-chat].active-chat").animate({
-                scrollTop: $(".chat[data-chat].active-chat")[0].scrollHeight
+            $(".chat-wrapper").animate({
+                scrollTop: $(".chat-wrapper")[0].scrollHeight
             }, 1000);
         }
+        
     })
 
+    $("input[type='image']").click(function() {
+        $("input[id='my_file']").click();
+    });
+    function previewImage(){
+    var oFReader = new FileReader();
+    oFReader.readAsDataURL($("#my_file").files[0]);
 
+    }
     ///// enter btn append chat  /////// 
     $("#btn-input").keyup(function (event) {
         if (event.keyCode === 13) {
