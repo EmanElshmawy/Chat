@@ -8,13 +8,13 @@
     CONTACT LIST STYLE
 ----------------------- */
 .chat_section {
-  height: 100vh; }
+  height: 100%; }
 
 .wrapper {
   display: flex;
   width: 70%;
   margin: 0 auto;
-  height: 80vh;
+  height: 80%;
   position: relative;
   top: 3rem;
   overflow: hidden;
@@ -79,6 +79,9 @@
     MEDIAQUERIES
 ----------------------------------------------------- */
 @media (max-width: 1000px) {
+  .wrapper {
+    width: 80%; }
+
   #contactList {
     margin-left: -300px;
     transition: .10s ease; }
@@ -111,6 +114,9 @@
     border-color: #5dc3b5;
     color: #fff; } }
 @media (max-width: 950px) {
+  .wrapper {
+    width: 90%; }
+
   #contactList {
     left: -300px;
     position: absolute;
@@ -181,6 +187,7 @@
   border-radius: 50%; }
 .right .chat-wrapper {
   height: 75%;
+  width: 100%;
   position: relative;
   overflow-y: auto;
   background-color: #f1f1f2; }

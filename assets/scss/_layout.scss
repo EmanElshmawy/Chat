@@ -3,14 +3,14 @@
 ----------------------- */
 
 .chat_section {
-    height: 100vh;
+    height: 100%;
 }
 
 .wrapper {
     display: flex;
     width: 70%;
     margin: 0 auto;
-    height: 80vh;
+    height: 80%;
     position: relative;
     top: 3rem;
     overflow: hidden;
@@ -91,6 +91,9 @@ a[aria-expanded="true"] {
 ----------------------------------------------------- */
 
 @media (max-width: 1000px) {
+    .wrapper {
+        width:80%;
+      }
     #contactList {
         margin-left: -300px;
         transition: .10s ease;
@@ -126,6 +129,9 @@ a[aria-expanded="true"] {
 }
 
 @media (max-width: 950px) {
+    .wrapper {
+      width:90%;
+    }
     #contactList {
         left: -300px;
         position: absolute;
