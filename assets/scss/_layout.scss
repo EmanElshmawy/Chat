@@ -1,0 +1,141 @@
+
+/* ----------------------
+    CONTACT LIST STYLE
+----------------------- */
+.chat_section{
+    height: 100vh;
+}
+.wrapper {
+    display: flex;
+    width: 70%;
+    margin: 0 auto;
+    height: 80vh;
+    position: relative;
+    top:3rem;
+    overflow: hidden;
+}
+
+#contactList {
+    width: 300px;
+    z-index: 999;
+    background: #7386D5;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+#contactList.active {
+    margin-left: -300px;
+}
+
+#contactList .contactList-header {
+    padding: 20px;
+    background: #6d7fcc;
+}
+
+#contactList ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #47748b;
+}
+
+#contactList ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#contactList ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+
+#contactList ul li a:hover {
+    color: #7386D5;
+    background: #fff;
+}
+
+#contactList ul li.active>a,
+a[aria-expanded="true"] {
+    color: #fff;
+    background: #6d7fcc;
+}
+
+
+/* ----------------------------------
+    right side of window chat
+----------------------------------- */
+
+#content {
+    width: calc(100% - 30%);
+    height:  100%;
+    overflow: hidden;
+    transition: all 0.3s;
+    position: relative;
+}
+
+#content.active {
+    width: 100%;
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 1000px) {
+    #contactList {
+        margin-left: -300px;
+        transition: .10s ease;
+    }
+    #contactList.active {
+        margin-left: 0;
+        z-index: 2;
+    }
+    #content {
+        width: 100%;
+    }
+    #content.active {
+        width: 100%;
+    }
+    #contactListCollapse span {
+        display: none;
+    }
+}
+    
+
+@media (max-width: 950px) {
+    #contactList {
+        left: -300px;
+        position: absolute;
+        transition: .50s ease-in-out;  
+      }
+    #contactList.active {
+        z-index: 3;
+        left: 0;
+    }
+    .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: .5s ease;
+        background-color: #000;
+      }  
+
+    #content {
+        width: 100%;
+    }
+    #content.active {
+        width: 100%;
+        transition: .10s ease-in-out;  
+        .overlay {
+            z-index: 2;
+            opacity: 0.3;
+          }
+    }
+    #contactListCollapse span {
+        display: none;
+    }
+}

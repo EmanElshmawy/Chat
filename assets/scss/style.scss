@@ -1,0 +1,73 @@
+  $version: "1.1.1";
+
+ /* ---------------------
+      IMPORT FILES
+------------------------- */
+
+  @import"variables";
+  @import"layout";
+  @import"chat-window";
+  @import"contact-window";
+  @import"search";
+
+
+/* ---------------------------------------
+    CONVERT WEBSITE FROM ENGLISH TO ARABIC
+------------------------------------------- */
+
+  $direction: ltr; 
+  $floatLeft: left;
+  $floatRight: right;
+  @if $direction==ltr {
+      $floatLeft: left;
+      $floatRight: right;
+  }
+  @else {
+      $floatLeft: right;
+      $floatRight: left;
+  }
+
+ /* ------------------
+        FONTS
+--------------------- */
+
+  @font-face {
+      font-family: mainFontRegular;
+      src: url("../fonts/Aller.ttf"), url("../fonts/Aller.eot") format("embedded-opentype"), url("../fonts/Aller.woff2") format("woff2"), url("../fonts/Aller.woff") format("woff"), url("../fonts/Aller.ttf") format("truetype"), url("../fonts/Aller.svg") format("svg");
+  }
+
+  @font-face {
+      font-family: mainFontBold;
+      src: url("../fonts/Aller-Bold.TTF"), url("../fonts/Aller-Bold.eot") format("embedded-opentype"), url("../fonts/Aller-Bold.woff2") format("woff2"), url("../fonts/Aller-Bold.woff") format("woff"), url("../fonts/Aller-Bold.ttf") format("truetype"), url("../fonts/Aller-Bold.svg") format("svg");
+  }
+
+/* ---------------------
+        GENERAL
+--------------------- */
+body {
+    font-family: mainFontRegular;
+    line-height: 30px;
+    background-color: #fff;
+}
+
+ *, *:before, *:after {
+    box-sizing: border-box;
+  }
+  
+  [class^="col-"],
+  [class*=" col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  a[data-toggle="collapse"] {
+    position: relative;
+}
+
+
+
+    .online{
+        .circle {
+            color:green !important;
+        }
+    }

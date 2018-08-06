@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content=" ">
+    <!-- <link rel="icon" href=""> -->
+    <title>Chat App</title>
+    <link href="assets/css/bootstrap-reboot.min.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-grid.min.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<style>
+    .notification{
+        position:absolute;
+        top:1rem;
+        left:1rem;
+        background-color: blue;
+        height: 100px;
+        width: 100px;
+    }
+</style>
+<body>
+    <!--services Section start-->
+
+    <section class="chat_section">
+            <div class="notification"></div>
+
+        <!-- wrapper start-->
+        <div class="wrapper">
+            <!-- contactList  -->
+            <div id="contactList">
+                <div class="top">
+                    <button type="button" id="contactListCollapse" class="btn btn-info float-right">
+                        <i class="fas fa-align-left"></i>
+                    </button>
+                    <input type="text" placeholder="Search" id="search" autocomplete="off" />
+                </div>
+                <div class="left">
+                    <ul class="people">
+                        <li class="person online" data-chat="person1">
+                            <div class="circle online-icon">active</div>
+                            <img class="personImg" src="assets/images/user1.jpg" alt="" />
+                            <span class="name">Thomas</span>
+                            <span class="time">2:45 PM</span>
+                            <span class="preview">Lorem Ipsum is simply dummy text of the printing and typesetting </span>
+                        </li>
+                        <li class="person online" data-chat="person2">
+                            <div class="circle online-icon">active</div>
+                            <img class="personImg" src="assets/images/user2.jpg" alt="" />
+                            <span class="name">Mohamed</span>
+                            <span class="time">1:30 PM</span>
+                            <span class="preview">Lorem Ipsum is simply dummy text of the printing and typesetting </span>
+                        </li>
+                        <li class="person" data-chat="person3">
+                            <div class="circle">active</div>
+                            <img class="personImg" src="assets/images/user3.jpg" alt="" />
+                            <span class="name">Ehab</span>
+                            <span class="time">6:10 PM</span>
+                            <span class="preview">Lorem Ipsum is simply dummy text of the printing and typesetting </span>
+                        </li>
+                        <li class="person online" data-chat="person4">
+                            <div class="circle online-icon">active</div>
+                            <img class="personImg" src="assets/images/user4.jpg" alt="" />
+                            <span class="name">Ahmed</span>
+                            <span class="time">8:09 PM</span>
+                            <span class="preview">Lorem Ipsum is simply dummy text of the printing and typesetting </span>
+                        </li>
+                        <li class="person" data-chat="person5">
+                                <div class="circle">active</div>
+                            <img class="personImg" src="assets/images/user5.jpg" alt="" />
+                            <span class="name">Michael</span>
+                            <span class="time">5:17 PM</span>
+                            <span class="preview">Lorem Ipsum is simply dummy text of the printing and typesetting </span>
+                        </li>
+                        <li class="person" data-chat="person6">
+                                <div class="circle">active</div>
+                            <img class="personImg" src="assets/images/user6.jpg" alt="" />
+                            <span class="name">Drake</span>
+                            <span class="time">12:06 PM</span>
+                            <span class="preview">Lorem Ipsum is simply dummy text of the printing and typesetting </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- contactList end -->
+            <!-- Page Content  -->
+            <div id="content">
+                <div class="overlay"></div>
+                <div class="right">
+                    <div class="top">
+                        <button type="button" id="contactListCollapse" class="btn btn-info float-left">
+                            <i class="fas fa-align-left"></i>
+                        </button>
+                        <div class="img-wrapper">
+                            <img class="img-responsive main-img" src="" alt="" />
+                        </div>
+                        <span>
+                            <span class="name"></span>
+                        </span>
+                    </div>
+                    <div class="chat" data-chat="person1">
+                        <div class="conversation-start">
+                            <span>Today, 7:00 PM</span>
+                        </div>
+                        <div class="bubble you">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting
+                        </div>
+                        <div class="bubble you">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting
+                        </div>
+                        <div class="bubble you">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting
+                        </div>
+                    </div>
+                    <div class="chat" data-chat="person2">
+                        <div class="conversation-start">
+                            <span>Today, 5:40 PM</span>
+                        </div>
+                        <div class="bubble you">
+                            Hello, can you hear me?
+                        </div>
+                        <div class="bubble you">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting
+                        </div>
+                        <div class="bubble me">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting
+                        </div>
+                    </div>
+                    <div class="chat" data-chat="person3">
+                        <div class="conversation-start">
+                            <span>Today, 4:10 PM</span>
+                        </div>
+                        <div class="bubble you">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting
+                        </div>
+                        <div class="bubble you">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting
+                        </div>
+
+                        <div class="bubble me">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting
+                        </div>
+                        <div class="bubble you">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting
+                        </div>
+                    </div>
+                    <div class="chat" data-chat="person4">
+                        <div class="conversation-start">
+                            <span>Yesterday, 4:20 PM</span>
+                        </div>
+                        <div class="bubble me">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting
+                        </div>
+                        <div class="bubble me">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting
+                        </div>
+                        <div class="bubble you">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting
+                        </div>
+                        <div class="bubble you">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting
+                        </div>
+                        <div class="bubble me">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting
+                        </div>
+                        <div class="bubble me">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting
+                        </div>
+                    </div>
+                    <div class="chat" data-chat="person5">
+                        <div class="conversation-start">
+                            <span>Today, 6:40 AM</span>
+                        </div>
+                        <div class="bubble you">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting
+                        </div>
+                        <div class="bubble you">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting
+                        </div>
+                        <div class="bubble you">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting
+                        </div>
+
+                    </div>
+                    <div class="chat" data-chat="person6">
+                        <div class="conversation-start">
+                            <span>Monday, 1:00 AM</span>
+                        </div>
+                        <div class="bubble you">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting
+                        </div>
+                        <div class="bubble you">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting
+                        </div>
+                        <div class="bubble me">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting
+                        </div>
+                    </div>
+                    <div class="write">
+                        <a href="#" class="write-link attach"></a>
+                        <input type="text" id="btn-input" />
+                        <button class="write-link send" id="btn-chat"></button>
+                    </div>
+                </div>
+            </div>
+            <!-- Page Content  end-->
+        </div>
+        <!-- wrapper  end-->
+    </section>
+
+    <!--services Section end-->
+
+
+    <!-- end shm -->
+    <script src="assets/js/jquery-3.1.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery-ui.min.js"></script>
+    <script src="assets/js/jquery.nicescroll.min"></script>
+    <script src="assets/js/script.js"></script>
+<!-- <script>
+        $(".people").niceScroll({
+        cursorcolor: "#229999",
+        cursorborder: "0px solid #fff",
+        cursorwidth: "7",
+        zindex: 10,
+        scrollspeed: "60",
+        horizrailenabled: false,
+    });
+    
+</script> -->
+</body>
+
+</html>

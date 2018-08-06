@@ -1,0 +1,426 @@
+ /* ---------------------
+      IMPORT FILES
+------------------------- */
+/* Colors */
+/* ----------------------
+    CONTACT LIST STYLE
+----------------------- */
+.chat_section {
+  height: 100vh; }
+
+.wrapper {
+  display: flex;
+  width: 70%;
+  margin: 0 auto;
+  height: 80vh;
+  position: relative;
+  top: 3rem;
+  overflow: hidden; }
+
+#contactList {
+  width: 300px;
+  z-index: 999;
+  background: #7386D5;
+  color: #fff;
+  transition: all 0.3s; }
+
+#contactList.active {
+  margin-left: -300px; }
+
+#contactList .contactList-header {
+  padding: 20px;
+  background: #6d7fcc; }
+
+#contactList ul.components {
+  padding: 20px 0;
+  border-bottom: 1px solid #47748b; }
+
+#contactList ul p {
+  color: #fff;
+  padding: 10px; }
+
+#contactList ul li a {
+  padding: 10px;
+  font-size: 1.1em;
+  display: block; }
+
+#contactList ul li a:hover {
+  color: #7386D5;
+  background: #fff; }
+
+#contactList ul li.active > a, a[aria-expanded="true"] {
+  color: #fff;
+  background: #6d7fcc; }
+
+/* ----------------------------------
+    right side of window chat
+----------------------------------- */
+#content {
+  width: calc(100% - 30%);
+  height: 100%;
+  overflow: hidden;
+  transition: all 0.3s;
+  position: relative; }
+
+#content.active {
+  width: 100%; }
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+@media (max-width: 1000px) {
+  #contactList {
+    margin-left: -300px;
+    transition: .10s ease; }
+
+  #contactList.active {
+    margin-left: 0;
+    z-index: 2; }
+
+  #content {
+    width: 100%; }
+
+  #content.active {
+    width: 100%; }
+
+  #contactListCollapse span {
+    display: none; } }
+@media (max-width: 950px) {
+  #contactList {
+    left: -300px;
+    position: absolute;
+    transition: .50s ease-in-out; }
+
+  #contactList.active {
+    z-index: 3;
+    left: 0; }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #000; }
+
+  #content {
+    width: 100%; }
+
+  #content.active {
+    width: 100%;
+    transition: .10s ease-in-out; }
+  #content.active .overlay {
+    z-index: 2;
+    opacity: 0.3; }
+
+  #contactListCollapse span {
+    display: none; } }
+/* ----------------------------------
+    right side of window chat
+----------------------------------- */
+.right {
+  height: 100%; }
+.right .top {
+  width: 100%;
+  height: 15%;
+  padding: 15px 29px;
+  background-color: #eceff1; }
+.right .top span {
+  font-size: 15px;
+  color: var(--grey); }
+.right .top span .name {
+  color: var(--dark); }
+.right .top .img-wrapper {
+  float: left;
+  width: 40px;
+  height: 40px;
+  margin-right: 12px; }
+.right .top .img-wrapper img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%; }
+.right .chat {
+  height: 75%;
+  position: relative;
+  display: none;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0 35px;
+  border-width: 1px 1px 1px 0;
+  border-style: solid;
+  border-color: var(--light);
+  justify-content: flex-end;
+  flex-direction: column; }
+.right .chat.active-chat {
+  display: block;
+  display: flex; }
+.right .chat.active-chat .bubble {
+  transition-timing-function: cubic-bezier(0.4, -0.04, 1, 1); }
+.right .chat.active-chat .bubble:nth-of-type(1) {
+  animation-duration: 0.15s; }
+.right .chat.active-chat .bubble:nth-of-type(2) {
+  animation-duration: 0.3s; }
+.right .chat.active-chat .bubble:nth-of-type(3) {
+  animation-duration: 0.45s; }
+.right .chat.active-chat .bubble:nth-of-type(4) {
+  animation-duration: 0.6s; }
+.right .chat.active-chat .bubble:nth-of-type(5) {
+  animation-duration: 0.75s; }
+.right .chat.active-chat .bubble:nth-of-type(6) {
+  animation-duration: 0.9s; }
+.right .chat.active-chat .bubble:nth-of-type(7) {
+  animation-duration: 1.05s; }
+.right .chat.active-chat .bubble:nth-of-type(8) {
+  animation-duration: 1.2s; }
+.right .chat.active-chat .bubble:nth-of-type(9) {
+  animation-duration: 1.35s; }
+.right .chat.active-chat .bubble:nth-of-type(10) {
+  animation-duration: 1.5s; }
+.right .write {
+  height: 10%;
+  padding-left: 8px;
+  border: 1px solid var(--light);
+  background-color: #eceff1; }
+.right .write input {
+  font-size: 16px;
+  float: left;
+  width: 85%;
+  height: 40px;
+  padding: 0 10px;
+  color: var(--dark);
+  border: 0;
+  outline: none;
+  background-color: #eceff1; }
+.right .write .write-link.attach:before {
+  display: inline-block;
+  float: left;
+  width: 20px;
+  height: 42px;
+  content: '';
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/382994/attachment.png");
+  background-repeat: no-repeat;
+  background-position: center; }
+.right .write .write-link.send:before {
+  display: inline-block;
+  float: left;
+  width: 20px;
+  height: 42px;
+  margin-left: 11px;
+  content: '';
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/382994/send.png");
+  background-repeat: no-repeat;
+  background-position: center; }
+.right .bubble {
+  font-size: 16px;
+  position: relative;
+  display: inline-block;
+  clear: both;
+  margin-bottom: 8px;
+  padding: 13px 14px;
+  vertical-align: top;
+  border-radius: 5px; }
+.right .bubble:before {
+  position: absolute;
+  top: 19px;
+  display: block;
+  width: 8px;
+  height: 6px;
+  content: '\00a0';
+  transform: rotate(29deg) skew(-35deg); }
+.right .bubble.you {
+  float: left;
+  color: var(--white);
+  background-color: var(--blue);
+  align-self: flex-start;
+  animation-name: slideFromLeft; }
+.right .bubble.you:before {
+  left: -3px;
+  background-color: var(--blue); }
+.right .bubble.me {
+  float: right;
+  color: var(--dark);
+  background-color: #eceff1;
+  align-self: flex-end;
+  animation-name: slideFromRight; }
+.right .bubble.me:before {
+  right: -3px;
+  background-color: #eceff1; }
+.right .conversation-start {
+  position: relative;
+  width: 100%;
+  margin-bottom: 27px;
+  text-align: center; }
+.right .conversation-start span {
+  font-size: 14px;
+  display: inline-block;
+  color: var(--grey); }
+.right .conversation-start span:before, .right .conversation-start span:after {
+  position: absolute;
+  top: 10px;
+  display: inline-block;
+  width: 30%;
+  height: 1px;
+  content: '';
+  background-color: var(--light); }
+.right .conversation-start span:before {
+  left: 0; }
+.right .conversation-start span:after {
+  right: 0; }
+
+/* -------------------------------------
+animation right side of window chat
+--------------------------------------- */
+@keyframes slideFromLeft {
+  0% {
+    margin-left: -200px;
+    opacity: 0; }
+  100% {
+    margin-left: 0;
+    opacity: 1; } }
+@-webkit-keyframes slideFromLeft {
+  0% {
+    margin-left: -200px;
+    opacity: 0; }
+  100% {
+    margin-left: 0;
+    opacity: 1; } }
+@keyframes slideFromRight {
+  0% {
+    margin-right: -200px;
+    opacity: 0; }
+  100% {
+    margin-right: 0;
+    opacity: 1; } }
+@-webkit-keyframes slideFromRight {
+  0% {
+    margin-right: -200px;
+    opacity: 0; }
+  100% {
+    margin-right: 0;
+    opacity: 1; } }
+/* ----------------------------------
+    left side of window chat
+----------------------------------- */
+.left {
+  height: 85%; }
+.left .people {
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow-y: auto; }
+.left .people .person {
+  position: relative;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  cursor: pointer; }
+.left .people .person:after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  display: block;
+  width: 80%;
+  height: 1px;
+  content: '';
+  transform: translate(-50%, 0); }
+.left .people .person img {
+  float: left;
+  width: 40px;
+  height: 40px;
+  margin-right: 12px;
+  border-radius: 50%; }
+.left .people .person .name {
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--dark); }
+.left .people .person .time {
+  font-size: 14px;
+  position: absolute;
+  top: 16px;
+  right: 10%;
+  padding: 0 0 5px 5px;
+  color: var(--grey); }
+.left .people .person .preview {
+  font-size: 14px;
+  display: inline-block;
+  overflow: hidden !important;
+  width: 70%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: var(--grey); }
+.left .people .person.active, .left .people .person:hover {
+  background-color: var(--blue); }
+.left .people .person.active span, .left .people .person:hover span {
+  color: var(--white);
+  background: transparent; }
+.left .people .person.active:after, .left .people .person:hover:after {
+  display: none; }
+
+/* ----------------------------------
+    top side of left window chat
+----------------------------------- */
+.top {
+  position: relative;
+  width: 100%;
+  height: 15%;
+  padding: 15px; }
+.top input {
+  float: left;
+  width: 70%;
+  height: 42px;
+  padding: 0 15px;
+  border: 1px solid var(--light);
+  background-color: #eceff1;
+  border-radius: 21px;
+  outline: none; }
+.top a.search {
+  display: block;
+  float: left;
+  width: 42px;
+  height: 42px;
+  margin-left: 10px;
+  border: 1px solid var(--light);
+  background-color: var(--blue);
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/382994/name-type.png");
+  background-repeat: no-repeat;
+  background-position: top 12px left 14px;
+  border-radius: 50%; }
+
+/* ---------------------------------------
+    CONVERT WEBSITE FROM ENGLISH TO ARABIC
+------------------------------------------- */
+ /* ------------------
+        FONTS
+--------------------- */
+@font-face {
+  font-family: mainFontRegular;
+  src: url("../fonts/Aller.ttf"), url("../fonts/Aller.eot") format("embedded-opentype"), url("../fonts/Aller.woff2") format("woff2"), url("../fonts/Aller.woff") format("woff"), url("../fonts/Aller.ttf") format("truetype"), url("../fonts/Aller.svg") format("svg"); }
+@font-face {
+  font-family: mainFontBold;
+  src: url("../fonts/Aller-Bold.TTF"), url("../fonts/Aller-Bold.eot") format("embedded-opentype"), url("../fonts/Aller-Bold.woff2") format("woff2"), url("../fonts/Aller-Bold.woff") format("woff"), url("../fonts/Aller-Bold.ttf") format("truetype"), url("../fonts/Aller-Bold.svg") format("svg"); }
+/* ---------------------
+        GENERAL
+--------------------- */
+body {
+  font-family: mainFontRegular;
+  line-height: 30px;
+  background-color: #fff; }
+
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+[class^="col-"], [class*=" col-"] {
+  padding-right: 0;
+  padding-left: 0; }
+
+a[data-toggle="collapse"] {
+  position: relative; }
+
+.online .circle {
+  color: green !important; }
+
+/*# sourceMappingURL=style.css.map */
