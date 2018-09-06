@@ -40,7 +40,12 @@ $(document).ready(function () {
 
     //  navigation between contact chat//
     $('.left .person[data-chat]').on("click", function () {
-
+            if (window.matchMedia('(max-width: 1000px)').matches) {
+                $('#contactList, #content').toggleClass('active');
+                $("overlay").toggleClass('overlay-active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            } 
         $('.chat[data-chat]').removeClass("active-chat");
         $('.person[data-chat]').removeClass("active");
 
