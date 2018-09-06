@@ -297,7 +297,12 @@
   background-color: #5dc3b5;
   color: #fff;
   border-color: #5dc3b5;
-  padding: 6px 18px; }
+  padding: 6px 18px;
+  outline: none; }
+.right .write .write-link:active {
+  background-color: #5dc3b5;
+  color: #fff;
+  border-color: #5dc3b5; }
 .right .bubble .text {
   position: relative;
   display: inline-block;

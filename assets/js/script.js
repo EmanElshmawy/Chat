@@ -1,9 +1,9 @@
-$(document).ready(function () {
+$(document).ready(function() {
 
 
     /////// collapsebtn responsive layout  /////// 
 
-    $('#contactListCollapse, #collapseBtn,  #contactListClose ').on('click', function () {
+    $('#contactListCollapse, #collapseBtn,  #contactListClose ').on('click', function() {
 
         $('#contactList, #content').toggleClass('active');
         $("overlay").toggleClass('overlay-active');
@@ -11,14 +11,14 @@ $(document).ready(function () {
         $('a[aria-expanded=true]').attr('aria-expanded', 'false');
 
     });
-  
+
 
     /////// search on contact list /////// 
 
-    $("#search").on("keyup", function () {
+    $("#search").on("keyup", function() {
 
         var value = $(this).val().toLowerCase();
-        $(".people .person .name").filter(function () {
+        $(".people .person .name").filter(function() {
             $(this).parent(".person").toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
 
@@ -34,18 +34,17 @@ $(document).ready(function () {
     var defaultImg = $(".person[data-chat=person1].active ").children(".personImg").attr("src");
     $(".main-img").attr('src', defaultImg);
     // append the name of the first chat //
-
     var activeName = $('.person[data-chat=person1]').children(".name").html();
     $(".top .name").html(activeName);
 
     //  navigation between contact chat//
-    $('.left .person[data-chat]').on("click", function () {
-            if (window.matchMedia('(max-width: 1000px)').matches) {
-                $('#contactList, #content').toggleClass('active');
-                $("overlay").toggleClass('overlay-active');
-                $('.collapse.in').toggleClass('in');
-                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
-            } 
+    $('.left .person[data-chat]').on("click", function() {
+        if (window.matchMedia('(max-width: 1000px)').matches) {
+            $('#contactList, #content').toggleClass('active');
+            $("overlay").toggleClass('overlay-active');
+            $('.collapse.in').toggleClass('in');
+            $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+        }
         $('.chat[data-chat]').removeClass("active-chat");
         $('.person[data-chat]').removeClass("active");
 
@@ -65,13 +64,11 @@ $(document).ready(function () {
 
     //////// append msg  /////// 
 
-    $('#btn-chat').on("click", function (time) {
+    $('#btn-chat').on("click", function(time) {
 
         if ($('#btn-input').val().trim() != '') {
             var message = $('#btn-input').val();
-
-         
-            $('<div class="bubble me"> <span class="text">'+ message + '</span> <Span class="time">12.36 PM</Span></div>').appendTo('.chat[data-chat].active-chat');
+            $('<div class="bubble me"> <span class="text">' + message + '</span> <Span class="time">12.36 PM</Span></div>').appendTo('.chat[data-chat].active-chat');
             $(".active .preview").html(message);
             $('#btn-input').val("");
             $('.person[data-chat].active').prependTo($('.person[data-chat]').parent());
@@ -79,19 +76,20 @@ $(document).ready(function () {
                 scrollTop: $(".chat-wrapper")[0].scrollHeight
             }, 1000);
         }
-        
+
     })
 
     $("input[type='image']").click(function() {
         $("input[id='my_file']").click();
     });
-    function previewImage(){
-    var oFReader = new FileReader();
-    oFReader.readAsDataURL($("#my_file").files[0]);
+
+    function previewImage() {
+        var oFReader = new FileReader();
+        oFReader.readAsDataURL($("#my_file").files[0]);
 
     }
     ///// enter btn append chat  /////// 
-    $("#btn-input").keyup(function (event) {
+    $("#btn-input").keyup(function(event) {
         if (event.keyCode === 13) {
             $("#btn-chat").click();
         }
@@ -117,7 +115,7 @@ $(document).ready(function () {
 
     function myNotification() {
         for (var key in object) {
-            console.log(key+"---"+object[key]);
+            console.log(key + "---" + object[key]);
             // if ($(".notifiaction") == null) {
             //     $(".notification").html(object[key]).css("background", "red");
             // } else {
